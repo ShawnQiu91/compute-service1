@@ -1,0 +1,19 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:password123@localhost:8010/eureka/
+
+spring:
+  cloud:
+    # 从eureka获取配置中心服务器，从服务器读取配置信息
+    config:
+      name: compute-service1
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        service-id: compute-config-center
+      username: compute
+      password: password123
+
+
