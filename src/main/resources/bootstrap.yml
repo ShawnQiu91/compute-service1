@@ -15,5 +15,10 @@ spring:
         service-id: compute-config-center
       username: compute
       password: password123
-
+# 配置微服务跟踪sleuth
+logging:
+  level:
+    root: INFO
+    #org.springframework.web.servlet.DispatcherServlet: DEBUG
+    org.springframework.cloud.sleuth: DEBUG
 
