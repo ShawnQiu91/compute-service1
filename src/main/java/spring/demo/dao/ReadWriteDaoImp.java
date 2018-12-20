@@ -8,8 +8,13 @@ import org.springframework.stereotype.Repository;
 public class ReadWriteDaoImp implements ReadWriteDao{
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    public void write(){
+    public void write(int id){
         String sql = "insert into user(user_id, user_name, password, phone) values(?,?,?,?)";
-        jdbcTemplate.update(sql,"1","qiu","123456","18801544066");
+        jdbcTemplate.update(sql,id,"qiu","123456","18801544066");
+    }
+
+    public Object read(int id){
+        String sql = "select * from user where user_id = ?";
+        return jdbcTemplate.queryForList(sql,id);
     }
 }

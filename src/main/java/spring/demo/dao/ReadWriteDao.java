@@ -1,5 +1,6 @@
 package spring.demo.dao;
 
 public interface ReadWriteDao {
-    public void write();
+    void write(int id);
+    Object read(int id);
 }
